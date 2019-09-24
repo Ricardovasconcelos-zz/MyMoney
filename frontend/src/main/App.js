@@ -1,9 +1,11 @@
 import React from 'react';
+import '../common/template/dependencies'
 
+import Header from '../common/header'
 const App = props => {
   return (
     <div className="wrapper">
-      <h1>My Money</h1>
+      <Header/>
     </div>
   );
 }
