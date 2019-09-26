@@ -6,4 +6,5 @@ const Content = props => (
        {props.children}
     </section>
 )
+
 export default Content
