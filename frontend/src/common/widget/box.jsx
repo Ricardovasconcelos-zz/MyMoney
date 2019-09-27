@@ -4,7 +4,7 @@ import Grid from '../layout/Grid'
 
 
 const box = props =>(
-    <Grid>
+    <Grid cols={props.cols}>
         <div className={`small-box bg-${props.color}`}>
             <div className="inner">
                 <h3>{props.value}</h3>
