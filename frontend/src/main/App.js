@@ -5,15 +5,20 @@ import Header from '../common/header'
 import Sidebar from '../common/template/sidebar';
 import Footer from '../common/template/footer';
 import Routes from './routes'
+import Messages from '../common/msg/message'
+
 const App = props => {
   return (
     <div className="wrapper">
       <Header/>
       <Sidebar/>
+
       <div className="content-wrapper">
         <Routes/>
       </div>
+
       <Footer/>
+      <Messages/>
     </div>
   );
 }
