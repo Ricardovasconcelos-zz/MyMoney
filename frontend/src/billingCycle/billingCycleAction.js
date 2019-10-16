@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { reset as resetForm } from 'redux-form'
+import { reset as resetForm, initialize } from 'redux-form'
 import { showTabs, selectTab } from '../common/tab/tabActions'
 
 import { toastr } from 'react-redux-toastr'
@@ -31,4 +31,12 @@ export function create(values){
         })
     }
   
+}
+
+export function showUpdate(billingCycle) {
+    return [
+        showTabs('tabUpdate'),
+        selectTab('tabUpdate'),
+        initialize('BillingCycleForm', billingCycle)
+    ]
 }
