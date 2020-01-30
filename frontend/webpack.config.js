@@ -2,14 +2,14 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.jsx',
     output: {
         path: __dirname + '/public',
         filename: './app.js'
     },
     devServer: {
-        port:8080,
-        contentBase: './public'
+        port: 8080,
+        contentBase: './public',
     },
     resolve: {
         extensions: ['', '.js', '.jsx'],
@@ -19,7 +19,7 @@ module.exports = {
             bootstrap: 'modules/admin-lte/bootstrap/js/bootstrap.js'
         }
     },
-    plugins: [
+    plugins: [ 
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
@@ -31,17 +31,17 @@ module.exports = {
         loaders: [{
             test: /.js[x]?$/,
             loader: 'babel-loader',
-            exclude: '/node_modules/',
+            exclude: /node_modules/,
             query: {
-                presets: ['react', 'es2015'],
+                presets: ['es2015', 'react'],
                 plugins: ['transform-object-rest-spread']
             }
-        },{
+        }, {
             test: /\.css$/,
             loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
         }, {
             test: /\.woff|.woff2|.ttf|.eot|.svg|.png|.jpg*.*$/,
-            loader:'file'
+            loader: 'file'
         }]
     }
 }

@@ -1,10 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-
-export default function TabsHeader(props) {
-  return (
-    <ul className="nav nav-tabs">
+export default props => (
+    <ul className='nav nav-tabs'> 
         {props.children}
-    </ul>   
-  );
-}
+    </ul> 
+)
